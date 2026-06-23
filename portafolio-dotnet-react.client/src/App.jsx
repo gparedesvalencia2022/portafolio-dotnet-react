@@ -7,15 +7,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     return (
-        <BrowserRouter>
-            <Navbar />
+        <>
+            <BrowserRouter>
+                <Navbar />
 
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/dotnet" element={<DotNet />} />
-                <Route path="/ai" element={<AIProgramming />} />
-            </Routes>
-        </BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/dotnet" element={<DotNet />} />
+                    <Route path="/ai" element={<AIProgramming />} />
+                </Routes>
+            </BrowserRouter>
+
+            {/* FOOTER */}
+            <footer className="bg-dark text-white text-center p-3">
+                © 2026 - Portfolio .NET Developer gparedesvalencia
+            </footer>
+        </>
     );
 }
 
