@@ -5,8 +5,8 @@
 In `portafolio-dotnet-react.Server.csproj`, remove the following lines:
 
 
-<SpaRoot>..\portafolio-dotnet-react.client</SpaRoot>
-<BuildServerSide>false</BuildServerSide>
+XML<SpaRoot>..\portafolio-dotnet-react.client</SpaRoot> 
+ XML<BuildServerSide >false</BuildServerSide> 
 
 ### ✅ Step 2 — Add back the following section:
 <ItemGroup>
@@ -132,6 +132,141 @@ obj/
 appsettings.Development.json
 
 
+## 🚀 Deployment on Render (Production)
+
+This project uses Docker to deploy a full-stack application (.NET + React) on Render.
+
+---
+
+## ⚠️ Step 1 — Prepare the Project for Production
+
+Before deploying, you must adjust the `.csproj` configuration.
+
+### ✅ Remove development-only settings
+
+In `portafolio-dotnet-react.Server.csproj`, remove:
+
+
+<SpaRoot>..\portafolio-dotnet-react.client</SpaRoot>
+<SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
+<SpaProxyServerUrl>https://localhost:63293</SpaProxyServerUrl>
+
+<ItemGroup>
+  <ProjectReference Include="..\portafolio-dotnet-react.client\portfolio-dotnet-react.client.esproj">
+    <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+  </ProjectReference>
+</ItemGroup>
+
+✅ Remove the client project reference
+
+
+<ItemGroup>
+  <ProjectReference Include="..\portafolio-dotnet-react.client\portfolio-dotnet-react.client.esproj">
+    <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+  </ProjectReference>
+</ItemGroup>
+
+✅ Add production setting
+Ensure you have:
+XML<BuildServerSide>false</BuildServerSide>
+
+git add .
+git commit -m "prepare for production deployment"
+git push
+
+🌐 Step 3 — Create Web Service on Render
+
+
+Go to:
+👉 https://render.com
+
+
+Sign in with your GitHub account
+
+
+Click:
+New → Web Service
+
+
+
+Select your repository:
+portafolio-dotnet-react
+
+
+
+
+⚙️ Step 4 — Configure Service
+Fill the form as follows:
+
+
+Name:
+portfolio-dotnet-react
+
+
+
+Runtime:
+Docker
+
+
+
+Branch:
+master (or main)
+
+
+
+Instance Type:
+Free ✅
+
+
+
+Root Directory:
+(leave empty)
+
+
+
+Build Command:
+(leave empty)
+
+
+
+Start Command:
+(leave empty)
+
+
+
+
+🚀 Step 5 — Deploy
+Click:
+Deploy Web Service
+
+
+⏳ Step 6 — Build Process
+Render will:
+
+Clone your repository
+Build the Docker image
+Install Node.js
+Build the React frontend
+Publish the .NET backend
+Start the application
+
+
+✅ Step 7 — Access Your App
+Once deployment completes, you will receive a public URL:
+https://your-app-name.onrender.com
+
+
+⚠️ Important Notes
+
+The free plan may take a few minutes to start (cold start)
+First build may take 5–10 minutes
+Docker cache warnings can be ignored
+
+
+🧠 Development vs Production
+ModeBehaviorDevelopmentReact + .NET run separately
+
+Production.NET serves the full application
 🚀 Future Improvements
 
 Database integration (SQL Server / PostgreSQL)
