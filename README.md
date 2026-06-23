@@ -1,5 +1,20 @@
 # 🚀 Portfolio - .NET + React Full Stack
 
+### ✅ Step 1 — Remove Production Settings
+
+In `portafolio-dotnet-react.Server.csproj`, remove the following lines:
+
+
+<SpaRoot>..\portafolio-dotnet-react.client</SpaRoot>
+<BuildServerSide>false</BuildServerSide>
+
+### ✅ Step 2 — Add back the following section:
+<ItemGroup>
+  <ProjectReference Include="..\portafolio-dotnet-react.client\portfolio-dotnet-react.client.esproj">
+    <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+  </ProjectReference>
+</ItemGroup>
+
 ## 📖 Overview
 
 This is a modern full-stack portfolio application built using:
@@ -125,6 +140,13 @@ Admin panel (CRUD projects)
 Deployment using Docker + Cloud
 CI/CD pipeline
 
+
+## 🛠️ Development Mode (Visual Studio - F5)
+
+If you want to restore the original development experience using Visual Studio (F5),
+you need to undo the production changes and re-enable the client integration.
+
+---
 
 👨‍💻 Author
 © 2026 - Portfolio .NET Developer gparedesvalencia
