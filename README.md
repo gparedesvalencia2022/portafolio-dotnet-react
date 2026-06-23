@@ -5,15 +5,15 @@
 In `portafolio-dotnet-react.Server.csproj`, remove the following lines:
 
 
-#XML<SpaRoot>..\portafolio-dotnet-react.client</SpaRoot> 
- #XML<BuildServerSide >false</BuildServerSide> 
+XML<SpaRoot>..\portafolio-dotnet-react.client</SpaRoot> 
+ XML<BuildServerSide >false</BuildServerSide> 
 
 ### ✅ Step 2 — Add back the following section:
-#<ItemGroup>
-  #<ProjectReference Include="..\portafolio-dotnet-react.client\portfolio-dotnet-react.client.esproj">
-    #<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-  #</ProjectReference>
-#</ItemGroup>
+XML<ItemGroup>
+  XML<ProjectReference Include="..\portafolio-dotnet-react.client\portfolio-dotnet-react.client.esproj">
+   XML <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+  XML</ProjectReference>
+XML</ItemGroup>
 
 ## 📖 Overview
 
