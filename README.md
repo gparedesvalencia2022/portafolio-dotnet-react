@@ -85,7 +85,8 @@ json
 🖥️ Getting Started
 1. Clone the repository
 Shell:
-git clone https://github.com/your-username/your-repo.gitcd your-repo
+git clone https://github.com/gparedesvalencia2022/portafolio-dotnet-react
+cd https://github.com/gparedesvalencia2022/portafolio-dotnet-react
 
 2. Run Backend (.NET)
 Shell:
