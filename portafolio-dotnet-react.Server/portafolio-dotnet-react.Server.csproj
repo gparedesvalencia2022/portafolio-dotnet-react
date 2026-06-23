@@ -8,6 +8,10 @@
     <SpaRoot>..\portafolio-dotnet-react.client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:63293</SpaProxyServerUrl>
+  <SpaRoot>..\portafolio-dotnet-react.client</SpaRoot>
+  <BuildServerSide>false</BuildServerSide>
+</PropertyGroup>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,11 +20,6 @@
       <Version>10.*-*</Version>
     </PackageReference>
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\portafolio-dotnet-react.client\portfolio-dotnet-react.client.esproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-  </ItemGroup>
+ 
 
 </Project>
