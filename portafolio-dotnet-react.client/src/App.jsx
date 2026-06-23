@@ -7,36 +7,28 @@ function App() {
 
     useEffect(() => {
         const fetchData = () => {
-            console.log("Intentando llamar API...");
-
             fetch("/api/portfolio")
                 .then(res => {
-                    if (!res.ok) {
-                        throw new Error("API aún no disponible");
-                    }
+                    if (!res.ok) throw new Error("API not ready");
                     return res.json();
                 })
-                .then(data => {
-                    console.log("Datos recibidos ✅");
-                    setPortfolio(data);
-                })
-                .catch(err => {
-                    console.log("Retry en 1s...", err);
-                    setTimeout(fetchData, 1000);
-                });
+                .then(data => setPortfolio(data))
+                .catch(() => setTimeout(fetchData, 1000));
         };
 
         fetchData();
     }, []);
 
-    if (!portfolio) return <div>Loading...</div>;
+    if (!portfolio) return <div className="text-center mt-5">Loading...</div>;
 
     return (
-        <>           
+        <>
             {/* NAVBAR */}
             <nav className="navbar navbar-dark bg-dark">
                 <div className="container">
-                    <span className="navbar-brand">My Portfolio: gparedesvalencia</span>
+                    <span className="navbar-brand text-wrap">
+                        My Portfolio: gparedesvalencia
+                    </span>
                 </div>
             </nav>
 
@@ -46,33 +38,31 @@ function App() {
                 <div className="text-center mb-5">
                     <h1
                         className="fw-bold matrix-text"
-                        style={{                           
-                            fontSize: "clamp(2rem, 4vw, 3rem)",
-                            lineHeight: "1.3"
+                        style={{
+                            fontSize: "clamp(1.5rem, 5vw, 3rem)",
+                            lineHeight: "1.3",
+                            padding: "0 10px"
                         }}
                     >
                         {portfolio.header.title}
                     </h1>
 
-                    {/* IMAGE BANNER */}
-                    <div className="text-center mb-5">
+                    {/* IMAGE */}
+                    <div className="text-center mt-4">
                         <img
                             src={banner}
                             alt="Portfolio Banner"
-                            className="img-fluid rounded shadow banner-img"/>
+                            className="img-fluid banner-img shadow"
+                        />
                     </div>
-
-                   
-                    
                 </div>
-                <br></br>
 
                 {/* TECHNOLOGIES */}
                 <div className="mb-5">
-                    <h2>🚀 Technologies</h2>
+                    <h2 className="text-center mb-4">🚀 Technologies</h2>
                     <div className="row">
                         {portfolio.technologies.map((tech, i) => (
-                            <div className="col-md-4 mb-3" key={i}>
+                            <div className="col-12 col-md-4 mb-3" key={i}>
                                 <div className="card p-3 text-center">
                                     {tech}
                                 </div>
@@ -80,13 +70,13 @@ function App() {
                         ))}
                     </div>
                 </div>
-                <br></br>
+
                 {/* PROJECTS */}
                 <div className="mb-5">
-                    <h2>🚀 Projects</h2>
+                    <h2 className="text-center mb-4">🚀 Projects</h2>
                     <div className="row">
                         {portfolio.projects.map((proj, i) => (
-                            <div className="col-md-6 mb-4" key={i}>
+                            <div className="col-12 col-md-6 mb-4" key={i}>
                                 <div className="card p-3">
                                     <h5>{proj.title}</h5>
                                     {proj.lines.map((line, j) => (
@@ -97,15 +87,15 @@ function App() {
                         ))}
                     </div>
                 </div>
-                <br></br>
-                {/* ABOUT me */}                
+
+                {/* ABOUT */}
                 <div className="mb-5">
-                    <h2 className="mb-4">About Me</h2>
+                    <h2 className="text-center mb-4">About Me</h2>
 
-                    <div className="row">
+                    <div className="row text-center text-md-start">
 
-                        {/* ENGLISH */}
-                        <div className="col-md-4">
+                        {/* EN */}
+                        <div className="col-12 col-md-4 mb-4">
                             <h4>🇬🇧 English</h4>
                             {portfolio.aboutEn.map((item, i) => (
                                 <div key={i} className="mb-2">
@@ -114,8 +104,8 @@ function App() {
                             ))}
                         </div>
 
-                        {/* FRANÇAIS */}
-                        <div className="col-md-4">
+                        {/* FR */}
+                        <div className="col-12 col-md-4 mb-4">
                             <h4>🇫🇷 Français</h4>
                             {portfolio.aboutFr.map((item, i) => (
                                 <div key={i} className="mb-2">
@@ -124,8 +114,8 @@ function App() {
                             ))}
                         </div>
 
-                        {/* ESPAÑOL */}
-                        <div className="col-md-4">
+                        {/* ES */}
+                        <div className="col-12 col-md-4 mb-4">
                             <h4>🇪🇸 Español</h4>
                             {portfolio.aboutEs.map((item, i) => (
                                 <div key={i} className="mb-2">
@@ -136,8 +126,9 @@ function App() {
 
                     </div>
                 </div>
+
             </div>
-            <br></br>
+
             {/* FOOTER */}
             <footer className="bg-dark text-white text-center p-3">
                 © 2026 - Portfolio .NET Developer gparedesvalencia
