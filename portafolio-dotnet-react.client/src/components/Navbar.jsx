@@ -19,12 +19,14 @@ export default function Navbar() {
                     </span>
                 </div>
 
-                <div>
+                <div className="d-flex align-items-center flex-wrap">
+
                     <NavLink
                         to="/"
                         className={({ isActive }) =>
                             "nav-link-custom me-3 " + (isActive ? "active" : "")
-                        }>
+                        }
+                    >
                         Home
                     </NavLink>
 
@@ -32,18 +34,32 @@ export default function Navbar() {
                         to="/dotnet"
                         className={({ isActive }) =>
                             "nav-link-custom me-3 " + (isActive ? "active" : "")
-                        }>
-                        The Technology .NET
+                        }
+                    >
+                        .NET
                     </NavLink>
 
                     <NavLink
                         to="/ai"
                         className={({ isActive }) =>
-                            "nav-link-custom " + (isActive ? "active" : "")
-                        }>
-                        Artificial Intelligence
+                            "nav-link-custom me-3 " + (isActive ? "active" : "")
+                        }
+                    >
+                        AI
                     </NavLink>
+
+                    <a
+                        href="https://github.com/gparedesvalencia2022"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="nav-link-custom ms-2 d-flex align-items-center"
+                    >
+                        <i className="bi bi-github me-1"></i>
+                        GitHub
+                    </a>
+
                 </div>
+
             </div>
         </nav>
     );

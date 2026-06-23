@@ -112,6 +112,7 @@ h1, h2, h3, h4 {
     text-decoration: none !important;
     color: white;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
     .nav-link-custom:hover {
@@ -123,4 +124,16 @@ h1, h2, h3, h4 {
         color: #2ea043;
         text-shadow: 0 0 10px #2ea043;
     }
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .nav-link-custom {
+        font-size: 14px;
+    }
+}
 
