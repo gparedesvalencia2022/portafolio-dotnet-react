@@ -1,28 +1,40 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Services
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-app.UseDefaultFiles();
-app.MapStaticAssets();
+// ✅ Servir archivos frontend (React)
+app.UseDefaultFiles();   // busca index.html
+app.UseStaticFiles();   // sirve wwwroot
 
-// Configure the HTTP request pipeline.
+// ✅ Dev-only tools
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+// ✅ SOLO en desarrollo usar HTTPS redirect
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthorization();
 
+// ✅ API
 app.MapControllers();
 
+// ✅ React fallback
 app.MapFallbackToFile("/index.html");
+
+// ✅ Puerto dinámico para Render
+if (app.Environment.IsProduction())
+{
+    var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+    app.Urls.Add($"http://0.0.0.0:{port}");
+}
 
 app.Run();
