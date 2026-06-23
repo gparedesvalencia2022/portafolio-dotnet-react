@@ -7,13 +7,11 @@
     <RootNamespace>portafolio_dotnet_react.Server</RootNamespace>
     <SpaRoot>..\portafolio-dotnet-react.client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
-    <SpaProxyServerUrl>https://localhost:63293</SpaProxyServerUrl>
-  <SpaRoot>..\portafolio-dotnet-react.client</SpaRoot>
-  <BuildServerSide>false</BuildServerSide>
+    <SpaProxyServerUrl>https://localhost:63293</SpaProxyServerUrl> 
+    <BuildServerSide>false</BuildServerSide>
 </PropertyGroup>
 
-  </PropertyGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
