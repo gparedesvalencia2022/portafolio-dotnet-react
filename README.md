@@ -8,7 +8,7 @@ In `portafolio-dotnet-react.Server.csproj`, remove the following lines:
 XML<SpaRoot>..\portafolio-dotnet-react.client</SpaRoot> 
  XML<BuildServerSide >false</BuildServerSide> 
 
-### ✅ Step 2 — Add back the following section:
+### ✅ Step 2 — Add back the following reference en server projet ProjectReference Include="..\portafolio-dotnet-react.client\portfolio-dotnet-react.client.esproj":
 XML<ItemGroup>
   XML<ProjectReference Include="..\portafolio-dotnet-react.client\portfolio-dotnet-react.client.esproj">
    XML <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
