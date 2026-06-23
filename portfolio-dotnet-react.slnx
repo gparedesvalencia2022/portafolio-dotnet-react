@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="portafolio-dotnet-react.client/portfolio-dotnet-react.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="portafolio-dotnet-react.Server/portafolio-dotnet-react.Server.csproj" />
+</Solution>
