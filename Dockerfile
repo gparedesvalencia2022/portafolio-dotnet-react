@@ -3,8 +3,15 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 COPY . .
+
+# 🔥 IMPORTANTE: ir a la carpeta del server
+WORKDIR /src/portafolio-dotnet-react.Server
+
+# restaurar
 RUN dotnet restore
-RUN dotnet publish portafolio-dotnet-react.Server -c Release -o /app/publish
+
+# publicar
+RUN dotnet publish -c Release -o /app/publish
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
