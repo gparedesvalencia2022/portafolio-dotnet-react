@@ -6,13 +6,14 @@ export default function Navbar() {
             <div className="container">
                 <div className="d-flex align-items-center">
 
-                    <img
-                        src="/logo.svg"
-                        alt="gp logo"
-                        className="logo"
-                        width="36"
-                    />
-
+                    <NavLink to="/">
+                        <img
+                            src="/logo.svg"
+                            alt="gp logo"
+                            className="logo"
+                            width="36"
+                        />
+                    </NavLink>
                     <span className="navbar-brand ms-2">
                         gparedesvalencia ©
                     </span>
@@ -23,8 +24,7 @@ export default function Navbar() {
                         to="/"
                         className={({ isActive }) =>
                             "nav-link-custom me-3 " + (isActive ? "active" : "")
-                        }
-                    >
+                        }>
                         Home
                     </NavLink>
 
@@ -32,8 +32,7 @@ export default function Navbar() {
                         to="/dotnet"
                         className={({ isActive }) =>
                             "nav-link-custom me-3 " + (isActive ? "active" : "")
-                        }
-                    >
+                        }>
                         The Technology .NET
                     </NavLink>
 
@@ -41,8 +40,7 @@ export default function Navbar() {
                         to="/ai"
                         className={({ isActive }) =>
                             "nav-link-custom " + (isActive ? "active" : "")
-                        }
-                    >
+                        }>
                         Artificial Intelligence
                     </NavLink>
                 </div>
