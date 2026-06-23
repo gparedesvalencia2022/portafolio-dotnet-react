@@ -107,3 +107,20 @@ h1, h2, h3, h4 {
 .navbar {
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
+
+.nav-link-custom {
+    text-decoration: none !important;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+    .nav-link-custom:hover {
+        color: #2ea043; /* verde tipo GitHub */
+        text-shadow: 0 0 5px #2ea043, 0 0 10px #2ea043, 0 0 20px #2ea043;
+        transform: translateY(-1px);
+    }
+    .nav-link-custom.active {
+        color: #2ea043;
+        text-shadow: 0 0 10px #2ea043;
+    }
+

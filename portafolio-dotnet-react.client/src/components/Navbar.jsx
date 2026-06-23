@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
     return (
@@ -19,9 +19,32 @@ export default function Navbar() {
                 </div>
 
                 <div>
-                    <Link className="text-white me-3" to="/">Home</Link>
-                    <Link className="text-white me-3" to="/dotnet">.NET</Link>
-                    <Link className="text-white" to="/ai">AI</Link>
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            "nav-link-custom me-3 " + (isActive ? "active" : "")
+                        }
+                    >
+                        Home
+                    </NavLink>
+
+                    <NavLink
+                        to="/dotnet"
+                        className={({ isActive }) =>
+                            "nav-link-custom me-3 " + (isActive ? "active" : "")
+                        }
+                    >
+                        The Technology .NET
+                    </NavLink>
+
+                    <NavLink
+                        to="/ai"
+                        className={({ isActive }) =>
+                            "nav-link-custom " + (isActive ? "active" : "")
+                        }
+                    >
+                        Artificial Intelligence
+                    </NavLink>
                 </div>
             </div>
         </nav>
