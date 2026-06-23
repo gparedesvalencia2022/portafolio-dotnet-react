@@ -27,14 +27,6 @@ export default function Home() {
 
     return (
         <>
-            {/* NAVBAR */}
-            <nav className="navbar navbar-dark bg-dark">
-                <div className="container">
-                    <span className="navbar-brand text-wrap">
-                        gparedesvalencia ©
-                    </span>
-                </div>
-            </nav>
 
             <div className="container py-5">
 
@@ -132,11 +124,6 @@ export default function Home() {
                 </div>
 
             </div>
-
-            {/* FOOTER */}
-            <footer className="bg-dark text-white text-center p-3">
-                © 2026 - Portfolio .NET Developer gparedesvalencia
-            </footer>
         </>
     );
 }

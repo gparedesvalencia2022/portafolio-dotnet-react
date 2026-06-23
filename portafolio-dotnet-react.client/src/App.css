@@ -79,3 +79,31 @@ h1, h2, h3, h4 {
         width: 70%;
     }
 }
+
+.logo {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 0px #2ea043);
+}
+
+@keyframes glowPulse {
+    0% {
+        filter: drop-shadow(0 0 2px #2ea043);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 10px #2ea043) drop-shadow(0 0 20px #2ea043);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 2px #2ea043);
+    }
+}
+
+.logo:hover {
+    animation: glowPulse 1.5s infinite;
+    transform: scale(1.1);
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}

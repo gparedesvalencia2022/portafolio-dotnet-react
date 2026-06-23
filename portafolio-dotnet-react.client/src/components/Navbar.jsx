@@ -4,7 +4,19 @@ export default function Navbar() {
     return (
         <nav className="navbar navbar-dark bg-dark">
             <div className="container">
-                <span className="navbar-brand">My Portfolio</span>
+                <div className="d-flex align-items-center">
+
+                    <img
+                        src="/logo.svg"
+                        alt="gp logo"
+                        className="logo"
+                        width="36"
+                    />
+
+                    <span className="navbar-brand ms-2">
+                        gparedesvalencia ©
+                    </span>
+                </div>
 
                 <div>
                     <Link className="text-white me-3" to="/">Home</Link>
