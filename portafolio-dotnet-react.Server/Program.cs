@@ -12,6 +12,9 @@ builder.Services.AddOpenApi();
 builder.Services.AddScoped<IPortfolioService, PortfolioService>();
 builder.Services.AddMemoryCache();
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowVite",
@@ -56,6 +59,17 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseRouting();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
+    });
+}
+
+
 app.UseMiddleware<ExceptionMiddleware>();
 
 //only if i want to use cors with vite but not actually needed because of the proxy in vite.config.ts
@@ -68,12 +82,19 @@ app.UseMiddleware<ExceptionMiddleware>();
 //app.UseAuthentication();
 //app.UseAuthorization();
 
+app.UseAuthorization();
+
+// API
+app.MapControllers();
 
 // Servir archivos frontend (React)
 app.UseDefaultFiles();   // busca index.html
 app.UseStaticFiles();   // sirve wwwroot
 
-// ✅ Dev-only tools
+// React fallback
+app.MapFallbackToFile("/index.html");
+
+//  Dev-only tools
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -85,15 +106,7 @@ if (app.Environment.IsDevelopment())
     app.UseHttpsRedirection();
 }
 
-app.UseAuthorization();
-
 app.UseCors("AllowVite");
-
-// ✅ API
-app.MapControllers();
-
-// ✅ React fallback
-app.MapFallbackToFile("/index.html");
 
 // ✅ Puerto dinámico para Render
 if (app.Environment.IsProduction())

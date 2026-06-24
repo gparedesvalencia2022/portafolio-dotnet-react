@@ -53,6 +53,10 @@ export default defineConfig({
             '/api': {
                 target,
                 secure: false
+            },
+            '/swagger': {
+                target,
+                secure: false
             }
         },
         port: parseInt(env.DEV_SERVER_PORT || '63293'),
