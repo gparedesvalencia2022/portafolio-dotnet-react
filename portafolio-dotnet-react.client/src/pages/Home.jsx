@@ -147,18 +147,24 @@ export default function Home() {
                             <button onClick={() => setLanguage("es")} className="btn btn-outline-success">ES</button>
                         </div>
 
-                        <div className="d-flex flex-column align-items-center text-center">
+                        <div className="d-flex justify-content-center">
 
-                            <h4 className="mb-3">
-                                {languageMap?.[language]?.title}
-                            </h4>
+                            <div className="card bg-dark text-white p-4" style={{ maxWidth: "750px" }}>
 
-                            <div style={{ maxWidth: "700px" }}>
-                                {languageMap?.[language]?.content?.map((item, i) => (
-                                    <p key={i} className="mb-2">
-                                        {item}
-                                    </p>
-                                ))}
+                                {/* ✅ título centrado */}
+                                <h4 className="mb-3 text-center">
+                                    {languageMap?.[language]?.title}
+                                </h4>
+
+                                {/* ✅ contenido justificado */}
+                                <div style={{ textAlign: "justify" }}>
+                                    {languageMap?.[language]?.content?.map((item, i) => (
+                                        <p key={i} className="mb-2">
+                                            {item}
+                                        </p>
+                                    ))}
+                                </div>
+
                             </div>
 
                         </div>

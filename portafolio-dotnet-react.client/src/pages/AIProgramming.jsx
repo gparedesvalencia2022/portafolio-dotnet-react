@@ -73,9 +73,9 @@ export default function AIProgramming() {
                     <div className="card bg-dark text-white p-4" style={{ maxWidth: "750px" }}>
 
                         {/* SUBTÍTULO centrado */}
-                        <h5 className="text-center mb-3">
+                        <h4 className="text-center mb-3">
                             {contentMap[language].title}
-                        </h5>
+                        </h4>
 
                         {/* CONTENIDO justificado */}
                         <div style={{ textAlign: "justify" }}>
