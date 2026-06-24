@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import LanguageBlock from "../components/LanguageBlock";
 import CustomCarousel from "../components/Carousel";
 import { motion } from "framer-motion";
+import Skeleton from "../components/Skeleton";
 
 export default function Home() {
     // useState is a React Hook used to create and manage component state (data that can change over time)
@@ -47,38 +48,7 @@ export default function Home() {
 
     if (!portfolio) {
         console.log("Portfolio is null"); // DEBUG
-
-        return (
-            <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-
-                <motion.p
-                    className="mb-3"
-                    animate={{ opacity: [0.3, 1, 0.3] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                    Loading portfolio...
-                </motion.p>
-
-                <div style={{ width: "220px", height: "4px", background: "#111" }}>
-                    <motion.div
-                        style={{
-                            height: "100%",
-                            background: "#2ea043"
-                        }}
-                        animate={{ x: ["-100%", "100%"] }}
-                        transition={{
-                            duration: 1.2,
-                            repeat: Infinity,
-                            ease: "linear"
-                        }}
-                    />
-                </div>
-
-            </div>
-
-
-        );
-
+        return <Skeleton />;
     }
 
 
