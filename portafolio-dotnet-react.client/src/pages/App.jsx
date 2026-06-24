@@ -11,6 +11,8 @@ import PageLoader from "../components/PageLoader";
 import { startSnow } from "@/effects/snowEffect";
 import { startFootball } from "@/effects/footballEffect";
 import { startGPVEffect } from "@/effects/gpvEffect";
+import { startMatrixRain } from "@/effects/matrixEffect";
+import { startGPVMouseEffect } from "@/effects/gpvMouseEffect";
 import { useRef } from "react";
 
 function App() {
@@ -25,7 +27,11 @@ function App() {
             const now = new Date();
             const month = now.getMonth() + 1;
 
-            startGPVEffect(30000);
+
+            startMatrixRain(30000);
+            startGPVMouseEffect(30000);
+
+            //startGPVEffect(30000);
 
             if (month === 12) startSnow(30000);
            // if (month === 6 || month === 7) startFootball(30000);
