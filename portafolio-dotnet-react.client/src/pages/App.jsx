@@ -28,8 +28,8 @@ function App() {
             const month = now.getMonth() + 1;
 
 
-            startMatrixRain(30000);
-            startGPVMouseEffect(30000);
+           // startMatrixRain(20000);
+            startGPVMouseEffect(10000);
 
             //startGPVEffect(30000);
 

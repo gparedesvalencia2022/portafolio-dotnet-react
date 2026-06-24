@@ -6,6 +6,7 @@ import CustomCarousel from "../components/Carousel";
 import { motion } from "framer-motion";
 import Skeleton from "../components/Skeleton";
 import { getPortfolio } from "../services/portfolioService";
+import TerminalCard from "../components/TerminalCard";
 
 export default function Home() {
     // useState is a React Hook used to create and manage component state (data that can change over time)
@@ -85,7 +86,10 @@ export default function Home() {
 
             <div className="container-fluid">
             <div className="container py-5">
-
+                    {/* TERMINAL */}
+                    <div className="d-flex justify-content-center mb-5">
+                        <TerminalCard />
+                    </div>
                 {/* HEADER */}
                 <div className="text-center mb-5">
 
@@ -105,8 +109,8 @@ export default function Home() {
                     <div className="text-center mt-4">
                         {/* CAROUSEL */}
                             <CustomCarousel />
-                    </div>
-                </div>
+                        </div>
+               </div>                 
 
                 {/* TECHNOLOGIES */}
 

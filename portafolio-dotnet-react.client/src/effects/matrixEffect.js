@@ -18,13 +18,19 @@ export function startMatrixRain(duration = 80000) {
     // ✅ configuración
     const lineHeight = 20;
     const speed = 1;
-    const spacingX = 60;
+    const spacingX = 220;
 
     // ✅ posiciones iniciales
     const lines = Array.from(
         { length: Math.floor(canvas.height / lineHeight) },
         (_, i) => -i * lineHeight
     );
+
+
+    const commands = [
+        "gpv@fullstack:~$ 0101001"
+    ];
+
 
     let animationId;
 
@@ -47,7 +53,8 @@ export function startMatrixRain(duration = 80000) {
 
             // ✅ dibujar fila horizontal GPV
             for (let x = 0; x < canvas.width; x += spacingX) {
-                ctx.fillText("GPV", x, y);
+                const text = commands[Math.floor(Math.random() * commands.length)];
+                ctx.fillText(text, x, y);
             }
 
             // ✅ mover

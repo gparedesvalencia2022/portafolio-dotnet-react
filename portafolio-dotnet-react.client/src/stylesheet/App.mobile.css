@@ -1,0 +1,45 @@
+/* =========================
+   MOBILE OPTIMIZATION ✅
+========================= */
+@media (max-width: 768px) {
+
+    .card {
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,255,135,0.2);
+    }
+
+    .banner-img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .nav-link-custom {
+        font-size: 14px;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .matrix-text {
+        animation: flicker 4s infinite;
+    }
+
+    .skeleton-card {
+        height: 120px;
+        background: #222;
+        border-radius: 10px;
+    }
+    /* ✅ SOLO ajustes responsive */
+    .terminal-container {
+        max-width: 100%;
+        margin: 1rem;
+    }
+
+    .terminal-body {
+        padding: 15px;
+        font-size: 12px;
+    }
+}

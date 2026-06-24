@@ -7,7 +7,7 @@
     --bg: #fff;
     --border: #e5e4e7;
     --code-bg: #f4f3ec;
-    --accent: #2ea043; /* verde GitHub */
+    --accent: #2ea043;
     --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 }
 
@@ -72,13 +72,11 @@ h2 {
 .banner-img {
     width: 100%;
     max-width: 700px;
-    height: auto;
     display: block;
     margin: 0 auto;
     border-radius: 10px;
 }
 
-/* Zoom suave */
 .carousel-item img {
     transition: transform 5s ease;
 }
@@ -87,7 +85,6 @@ h2 {
     transform: scale(1.05);
 }
 
-/* Slide horizontal */
 .carousel-item {
     transition: transform 1.2s ease-in-out;
 }
@@ -109,13 +106,12 @@ h2 {
     }
 
 /* =========================
-   NAVBAR (FIXED ✅)
+   NAVBAR
 ========================= */
 .navbar {
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Links */
 .nav-link-custom {
     text-decoration: none !important;
     color: white;
@@ -134,7 +130,6 @@ h2 {
         text-shadow: 0 0 10px var(--accent);
     }
 
-    /* GitHub icon animation */
     .nav-link-custom i {
         transition: transform 0.3s ease;
     }
@@ -143,7 +138,9 @@ h2 {
         transform: rotate(10deg) scale(1.2);
     }
 
-/* Logo glow */
+/* =========================
+   LOGO
+========================= */
 .logo {
     transition: all 0.3s ease;
 }
@@ -154,46 +151,95 @@ h2 {
     }
 
 /* =========================
-   MOBILE OPTIMIZATION
+   TERMINAL (GLOBAL ✅)
 ========================= */
-@media (max-width: 768px) {
-
-    .card {
-        padding: 1rem;
-    }
-
-    .banner-img {
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .nav-link-custom {
-        font-size: 14px;
-    }
-
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .matrix-text {
-        animation: flicker 4s infinite; /* más suave */
-    }
-
-    .skeleton-card {
-        height: 120px;
-        background: #222;
-        border-radius: 10px;
-    }
-
-
-    .card {
-        border-radius: 12px;
-        box-shadow: 0 0 10px rgba(0,255,135,0.2);
-    }
-
-    .card p {
-        line-height: 1.6;
-    }
-
+.terminal-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem auto;
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
 }
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    background: #2b2b2b;
+    padding: 8px 12px;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.terminal-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+    .terminal-btn.red {
+        background: #ff5f56;
+    }
+
+    .terminal-btn.yellow {
+        background: #ffbd2e;
+    }
+
+    .terminal-btn.green {
+        background: #27c93f;
+    }
+
+.terminal-title {
+    flex: 1;
+    text-align: center;
+    color: #ccc;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+.terminal-body {
+    padding: 20px;
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 14px;
+    text-shadow: 0 0 5px #00ff00;
+    background: radial-gradient(circle, #000 60%, #020 100%);
+}
+
+.terminal-line {
+    margin-bottom: 6px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    background: #00ff00;
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+.terminal-link {
+    color: #00ff00;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+    .terminal-link:hover {
+        color: #8cff8c;
+        text-shadow: 0 0 5px #00ff00;
+    }
