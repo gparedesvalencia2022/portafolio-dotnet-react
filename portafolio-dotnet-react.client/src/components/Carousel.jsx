@@ -36,7 +36,7 @@ export default function CustomCarousel() {
                 <div className="carousel-inner rounded shadow">
 
                     <div className="carousel-item active">
-                        <img src="/carousel/img1.jpg" className="d-block w-100 banner-img" />
+                        <img src="/carousel/img1.png" className="d-block w-100 banner-img" />
                     </div>
 
                     <div className="carousel-item">
