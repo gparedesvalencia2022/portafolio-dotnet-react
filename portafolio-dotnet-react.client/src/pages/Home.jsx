@@ -3,6 +3,7 @@ import Section from "../components/Section";
 import Card from "../components/Card";
 import LanguageBlock from "../components/LanguageBlock";
 import CustomCarousel from "../components/Carousel";
+import { motion } from "framer-motion";
 
 export default function Home() {
     // useState is a React Hook used to create and manage component state (data that can change over time)
@@ -46,27 +47,68 @@ export default function Home() {
 
     if (!portfolio) {
         console.log("Portfolio is null"); // DEBUG
-        return <div>Loading...</div>;
+
+        return (
+            <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+
+                <motion.p
+                    className="mb-3"
+                    animate={{ opacity: [0.3, 1, 0.3] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                    Loading portfolio...
+                </motion.p>
+
+                <div style={{ width: "220px", height: "4px", background: "#111" }}>
+                    <motion.div
+                        style={{
+                            height: "100%",
+                            background: "#2ea043"
+                        }}
+                        animate={{ x: ["-100%", "100%"] }}
+                        transition={{
+                            duration: 1.2,
+                            repeat: Infinity,
+                            ease: "linear"
+                        }}
+                    />
+                </div>
+
+            </div>
+
+
+        );
+
     }
 
 
     return (
-        <>
+
+        <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0., ease: "easeOut" }}
+        >
+
 
             <div className="container-fluid">
             <div className="container py-5">
 
                 {/* HEADER */}
                 <div className="text-center mb-5">
-                    <h1
-                        className="fw-bold matrix-text px-2"
-                        style={{
-                            fontSize: "clamp(1.5rem, 5vw, 3rem)",
-                            lineHeight: "1.3"
-                        }}
-                    >
-                        {portfolio.header.title}
-                    </h1>
+
+
+                        <motion.h1
+                            className="fw-bold matrix-text"
+                            initial={{ opacity: 0, y: -30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            {portfolio.header.title}
+                        </motion.h1>
+
+
 
                     {/* IMAGE */}
                     <div className="text-center mt-4">
@@ -77,7 +119,7 @@ export default function Home() {
 
                 {/* TECHNOLOGIES */}
 
-                <Section title="🚀 Technologies">
+                <Section title="Technologies">
                     <div className="row">
                         {portfolio.technologies?.map((tech, i) => (
                             <div className="col-12 col-md-4 mb-3" key={i}>
@@ -89,7 +131,7 @@ export default function Home() {
 
 
                 {/* PROJECTS */}
-                <Section title="🚀 Projects">
+                <Section title="Projects">
                     <div className="row">
                         {portfolio.projects?.map((proj, i) => (
                             <div className="col-12 col-md-6 mb-4" key={i}>
@@ -127,6 +169,6 @@ export default function Home() {
                 </Section>
             </div>
             </div>
-        </>
+        </motion.div>
     );
 }

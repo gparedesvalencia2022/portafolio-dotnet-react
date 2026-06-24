@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Carousel from "bootstrap/js/dist/carousel";
+import { motion } from "framer-motion"; // ✅ nuevo import
 
 export default function CustomCarousel() {
 
@@ -7,9 +8,11 @@ export default function CustomCarousel() {
         const el = document.getElementById("portfolioCarousel");
         if (!el) return;
 
+        // Limpiar instancia previa (evita bugs)
         const existing = Carousel.getInstance(el);
         if (existing) existing.dispose();
 
+        // Crear carousel
         const carousel = new Carousel(el, {
             interval: 6000,
             ride: "carousel",
@@ -21,7 +24,14 @@ export default function CustomCarousel() {
     }, []);
 
     return (
-        <div className="mt-4">
+
+        <motion.div
+            className="mt-4"
+            initial={{ opacity: 0, y: 20, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+
             <div id="portfolioCarousel" className="carousel slide">
                 <div className="carousel-inner rounded shadow">
 
@@ -43,6 +53,7 @@ export default function CustomCarousel() {
 
                 </div>
             </div>
-        </div>
+
+        </motion.div>
     );
 }

@@ -1,5 +1,14 @@
+import { motion } from "framer-motion";
 export default function AIProgramming() {
     return (
+
+        <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+        >
+
         <div className="container mt-5 mb-5">
 
             {/* TÍTULO */}
@@ -71,6 +80,7 @@ export default function AIProgramming() {
                 </div>
 
             </div>
-        </div>
+            </div>
+        </motion.div>
     );
 }

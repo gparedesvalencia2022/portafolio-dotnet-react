@@ -1,8 +1,16 @@
+import { motion } from "framer-motion";
+
 export default function Section({ title, children }) {
     return (
-        <div className="mb-5">
+        <motion.div
+            className="mb-5"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+        >
             <h2 className="text-center mb-4">{title}</h2>
             {children}
-        </div>
+        </motion.div>
     );
 }

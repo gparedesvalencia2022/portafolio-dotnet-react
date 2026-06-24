@@ -14,7 +14,7 @@ namespace portafolio_dotnet_react.Server.Controllers
             {
                 Header = new Header
                 {
-                    Title = "🚀 Building scalable enterprise solutions with .NET & Cloud",
+                    Title = "Building scalable enterprise solutions with .NET & Cloud",
                     Subtitle = ".NET Developer | Cloud | DevOps"
                 },
 
@@ -74,26 +74,26 @@ namespace portafolio_dotnet_react.Server.Controllers
 
                 AboutEn = new List<string>
                 {
-                    "🔭 Working on enterprise modernization with .NET",
-                    "🌱 Learning Azure, DevOps, React",
-                    "👯 Open to collaboration",
-                    "💬 Ask me about C#, ASP.NET, SQL Server"
+                    "Enterprise modernization with .NET",
+                    "Learning Azure, DevOps, React",
+                    "Open to collaboration",
+                    "Ask me about C#, ASP.NET, SQL Server"
                 },
 
                 AboutFr = new List<string>
                 {
-                    "🔭 Projets de modernisation .NET",
-                    "🌱 Apprentissage Azure et DevOps",
-                    "👯 Collaboration ouverte",
-                    "💬 C#, ASP.NET, SQL Server"
+                    "Projets de modernisation .NET",
+                    "Apprentissage Azure, DevOps, React",
+                    "Collaboration ouverte",
+                    "Discutons C#, ASP.NET et SQL Server"
                 },
 
                 AboutEs = new List<string>
                 {
-                    "🔭 Modernización con .NET",
-                    "🌱 Aprendiendo Azure y DevOps",
-                    "👯 Abierto a colaboración",
-                    "💬 C#, ASP.NET, SQL Server"
+                    "Modernización con .NET",
+                    "Aprendiendo Azure, DevOps, React",
+                    "Abierto a colaboración",
+                    "Hablemos de C#, ASP.NET, SQL Server"
                 }
             };
 
