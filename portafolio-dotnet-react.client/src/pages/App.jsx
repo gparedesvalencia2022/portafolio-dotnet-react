@@ -8,7 +8,31 @@ import AIProgramming from "./AIProgramming";
 import Navbar from "../components/Navbar";
 import PageLoader from "../components/PageLoader";
 
+import { startSnow } from "@/effects/snowEffect";
+import { startFootball } from "@/effects/footballEffect";
+import { startGPVEffect } from "@/effects/gpvEffect";
+import { useRef } from "react";
+
 function App() {
+    const started = useRef(false);
+
+    useEffect(() => {
+        const now = new Date();
+        const month = now.getMonth() + 1;
+        if (!started.current) {
+            started.current = true;
+
+            const now = new Date();
+            const month = now.getMonth() + 1;
+
+            startGPVEffect(30000);
+
+            if (month === 12) startSnow(30000);
+           // if (month === 6 || month === 7) startFootball(30000);
+        }
+
+    }, []);
+
 
     const location = useLocation();
     const [loading, setLoading] = useState(false);
