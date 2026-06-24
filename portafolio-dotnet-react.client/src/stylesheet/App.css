@@ -1,0 +1,177 @@
+/* =========================
+   ROOT / VARIABLES
+========================= */
+:root {
+    --text: #6b6375;
+    --text-h: #08060d;
+    --bg: #fff;
+    --border: #e5e4e7;
+    --code-bg: #f4f3ec;
+    --accent: #2ea043; /* verde GitHub */
+    --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+body {
+    margin: 0;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #000;
+    color: var(--accent);
+}
+
+#root {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    border-inline: 1px solid var(--border);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1, h2, h3, h4 {
+    color: var(--accent);
+    text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent);
+}
+
+h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin: 32px 0;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+/* =========================
+   MATRIX EFFECT
+========================= */
+.matrix-text {
+    animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.85;
+    }
+}
+
+/* =========================
+   CAROUSEL
+========================= */
+.banner-img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Zoom suave */
+.carousel-item img {
+    transition: transform 5s ease;
+}
+
+.carousel-item.active img {
+    transform: scale(1.05);
+}
+
+/* Slide horizontal */
+.carousel-item {
+    transition: transform 1.2s ease-in-out;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+    border-radius: 10px;
+    background-color: #111;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+/* =========================
+   NAVBAR (FIXED ✅)
+========================= */
+.navbar {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Links */
+.nav-link-custom {
+    text-decoration: none !important;
+    color: white;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+    .nav-link-custom:hover {
+        color: var(--accent);
+        text-shadow: 0 0 5px var(--accent), 0 0 15px var(--accent);
+        transform: translateY(-1px);
+    }
+
+    .nav-link-custom.active {
+        color: var(--accent);
+        text-shadow: 0 0 10px var(--accent);
+    }
+
+    /* GitHub icon animation */
+    .nav-link-custom i {
+        transition: transform 0.3s ease;
+    }
+
+    .nav-link-custom:hover i {
+        transform: rotate(10deg) scale(1.2);
+    }
+
+/* Logo glow */
+.logo {
+    transition: all 0.3s ease;
+}
+
+    .logo:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 10px var(--accent));
+    }
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 768px) {
+
+    .card {
+        padding: 1rem;
+    }
+
+    .banner-img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .nav-link-custom {
+        font-size: 14px;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
