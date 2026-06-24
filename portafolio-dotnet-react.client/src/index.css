@@ -118,3 +118,38 @@ code {
     .card:hover {
         transform: translateY(-5px);
     }
+
+.banner-img {
+    height: 350px;
+    object-fit: cover;
+    transition: transform 3s ease;
+}
+
+/* Parallax ligero (movimiento suave) */
+.parallax-container {
+    overflow: hidden;
+}
+
+.carousel-item img {
+    transition: transform 5s ease;
+}
+
+
+    .carousel-item.active img {
+        transform: scale(1.1) translateX(-10px);
+    }
+
+.carousel-item {
+    transition: transform 7.0s ease-in-out !important;
+}
+
+
+/*@font-face {
+    font-family: "Share Tech Mono";
+    src: url("/fonts/ShareTechMono-Regular.ttf");
+}
+
+body {
+    font-family: "Share Tech Mono";
+}
+*/
