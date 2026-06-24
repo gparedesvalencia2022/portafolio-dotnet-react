@@ -185,4 +185,13 @@ h2 {
         border-radius: 10px;
     }
 
+
+    .card {
+        border-radius: 10px;
+    }
+
+    .card p {
+        line-height: 1.6;
+    }
+
 }

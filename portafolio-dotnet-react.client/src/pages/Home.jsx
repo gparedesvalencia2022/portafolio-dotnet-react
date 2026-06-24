@@ -15,6 +15,8 @@ export default function Home() {
 
     const [portfolio, setPortfolio] = useState(null);
 
+    const [language, setLanguage] = useState("en");
+
     // useEffect is a React Hook used to handle side effects (like DOM manipulation,
     // event listeners, API calls). It runs after the component renders.
     // The empty dependency array [] means it runs only once when the component mounts.
@@ -52,13 +54,30 @@ export default function Home() {
     }
 
 
+    const languageMap = {
+        en: {
+            title: "🇬🇧 English",
+            content: portfolio.aboutEn
+        },
+        fr: {
+            title: "🇫🇷 Français",
+            content: portfolio.aboutFr
+        },
+        es: {
+            title: "🇪🇸 Español",
+            content: portfolio.aboutEs
+        }
+    };
+
+
+
     return (
 
         <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -40 }}
-            transition={{ duration: 0., ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
         >
 
 
@@ -114,29 +133,36 @@ export default function Home() {
                             </div>
                         ))}
                     </div>
-                </Section>
+                    </Section>
 
-                {/* ABOUT */}
-                <Section title="About Me">
-                    <div className="row text-center text-md-start">
+                   
 
-                        <LanguageBlock
-                            title="🇬🇧 English"
-                            content={portfolio.aboutEn}
-                        />
 
-                        <LanguageBlock
-                            title="🇫🇷 Français"
-                            content={portfolio.aboutFr}
-                        />
 
-                        <LanguageBlock
-                            title="🇪🇸 Español"
-                            content={portfolio.aboutEs}
-                        />
+                    {/* ABOUT */}
+                    <Section title="About Me">
+                        <div className="text-center mb-4">
+                            <button onClick={() => setLanguage("en")} className="btn btn-outline-success me-2">EN</button>
+                            <button onClick={() => setLanguage("fr")} className="btn btn-outline-success me-2">FR</button>
+                            <button onClick={() => setLanguage("es")} className="btn btn-outline-success">ES</button>
+                        </div>
 
-                    </div>
-                </Section>
+                        <div className="d-flex flex-column align-items-center text-center">
+
+                            <h4 className="mb-3">
+                                {languageMap?.[language]?.title}
+                            </h4>
+
+                            <div style={{ maxWidth: "700px" }}>
+                                {languageMap?.[language]?.content?.map((item, i) => (
+                                    <p key={i} className="mb-2">
+                                        {item}
+                                    </p>
+                                ))}
+                            </div>
+
+                        </div>
+                    </Section>                
             </div>
             </div>
         </motion.div>
