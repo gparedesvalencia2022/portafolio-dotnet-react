@@ -2,11 +2,11 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-import Home from "./pages/Home";
-import DotNet from "./pages/DotNet";
-import AIProgramming from "./pages/AIProgramming";
-import Navbar from "./components/Navbar";
-import PageLoader from "./components/PageLoader";
+import Home from "./Home";
+import DotNet from "./DotNet";
+import AIProgramming from "./AIProgramming";
+import Navbar from "../components/Navbar";
+import PageLoader from "../components/PageLoader";
 
 function App() {
 

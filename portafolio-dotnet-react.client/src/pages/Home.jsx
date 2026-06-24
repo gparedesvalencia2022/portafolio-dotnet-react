@@ -5,6 +5,7 @@ import LanguageBlock from "../components/LanguageBlock";
 import CustomCarousel from "../components/Carousel";
 import { motion } from "framer-motion";
 import Skeleton from "../components/Skeleton";
+import { getPortfolio } from "../services/portfolioService";
 
 export default function Home() {
     // useState is a React Hook used to create and manage component state (data that can change over time)
@@ -23,22 +24,23 @@ export default function Home() {
     useEffect(() => {
 
         // Fetch portfolio data from API with automatic retry until available
-        const fetchData = () => {
+        const fetchData = async () => {
+            try {
+                const data = await getPortfolio();
 
-            fetch("/api/portfolio")
 
-                // Validate HTTP response status
-                .then(res => {
-                    if (!res.ok) throw new Error("API not ready");
-                    return res.json(); // Parse response to JSON
-                })
+                if (!data || data.error) {
+                    console.error("Error in portfolioService:", data?.status);
+                    return; // importante parar aquí
+                }
 
-                // Update component state with fetched data
-                .then(data => setPortfolio(data))
 
-                // Retry after delay if request fails
-                .catch(() => setTimeout(fetchData, 1000));
+                setPortfolio(data);
+            } catch (error) {
+                console.error("Error loading portfolio:", error);
+            }
         };
+
 
         // Trigger initial data load on component mount
         fetchData();
