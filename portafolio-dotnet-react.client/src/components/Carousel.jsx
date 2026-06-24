@@ -51,6 +51,10 @@ export default function CustomCarousel() {
                         <img src="/carousel/img4.jpg" className="d-block w-100 banner-img" />
                     </div>
 
+                    <div className="carousel-item">
+                        <img src="/carousel/img5.jpg" className="d-block w-100 banner-img" />
+                    </div>
+
                 </div>
             </div>
 
