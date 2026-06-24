@@ -9,7 +9,7 @@ function App() {
     return (
         <div className="d-flex flex-column min-vh-100">
 
-            <BrowserRouter>
+            
                 <Navbar />
 
                 {/* CONTENIDO */}
@@ -21,7 +21,7 @@ function App() {
                     </Routes>
                 </div>
 
-            </BrowserRouter>
+            
 
             {/* FOOTER */}
             <footer className="bg-dark text-white text-center p-3">

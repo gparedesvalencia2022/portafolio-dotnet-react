@@ -48,45 +48,42 @@ export default function Home() {
 
     useEffect(() => {
 
-        if (!portfolio) return; // ✅ espera a que DOM esté listo
-        // Get the carousel element from the DOM using its id
-        const carouselElement = document.getElementById("portfolioCarousel");
+        if (!portfolio) return;
 
-        // If the element does not exist or Bootstrap is not loaded, exit early
+        const carouselElement = document.getElementById("portfolioCarousel");
         if (!carouselElement) return;
 
-        // Get or create a Bootstrap Carousel instance for this element
+        // ✅ limpiar instancia anterior si existe
+        let existing = Carousel.getInstance(carouselElement);
+        if (existing) {
+            existing.dispose();
+        }
 
-        //  Bootstrap carousel instance (correct import)
+        // ✅ crear nueva instancia limpia
         const carousel = new Carousel(carouselElement, {
             interval: 6000,
-            ride: "carousel"
+            ride: "carousel",
+            wrap: true
         });
 
+        // ✅ iniciar ciclo correctamente
+        carousel.cycle();
 
-
-        // Function to pause the carousel when the mouse enters (hover)
         const onEnter = () => carousel.pause();
-
-        // Function to resume the carousel when the mouse leaves
         const onLeave = () => carousel.cycle();
 
-        // Add event listener for mouse enter (pause autoplay)
         carouselElement.addEventListener("mouseenter", onEnter);
-
-        // Add event listener for mouse leave (resume autoplay)
         carouselElement.addEventListener("mouseleave", onLeave);
 
-        // Cleanup function (VERY IMPORTANT in React)
-        // This removes event listeners when the component unmounts
-        // to prevent memory leaks and duplicate listeners
         return () => {
             carouselElement.removeEventListener("mouseenter", onEnter);
             carouselElement.removeEventListener("mouseleave", onLeave);
+
+            // ✅ destruir al desmontar
+            carousel.dispose();
         };
 
-    }, []); // Runs only once when the component mounts
-    
+    }, [portfolio]);  
 
 
 
