@@ -11,12 +11,20 @@
     <BuildServerSide>false</BuildServerSide>
 </PropertyGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\portafolio-dotnet-react.client\portfolio-dotnet-react.client.esproj">
+			 <ReferenceOutputAssembly>false</ReferenceOutputAssembly>			
+		</ProjectReference>		
+	</ItemGroup>
   
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
       <Version>10.*-*</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.19.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.19.1" />
   </ItemGroup>
  
 
