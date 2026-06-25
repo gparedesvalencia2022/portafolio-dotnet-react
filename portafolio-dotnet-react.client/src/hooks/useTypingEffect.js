@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { startTypingEffect } from "../effects/typingEffect";
+import { startTypingEffect } from "../effects/typingEffect"; 
 
 export function useTypingEffect(text = "", speed = 30) {
     const [displayed, setDisplayed] = useState("");
