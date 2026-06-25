@@ -6,8 +6,9 @@ import Home from "./Home";
 import DotNet from "./DotNet";
 import AIProgramming from "./AIProgramming";
 import ReactTech from "./ReactTech";
+import Microservices from "./Microservices";
 import Navbar from "../components/Navbar";
-import PageLoader from "../components/PageLoader";
+import PageLoader from "../components/PageLoader"; 
 
 import { useSnowEffect } from "@/hooks/useSnowEffect";
 import { useFootballEffect } from "@/hooks/useFootballEffect";
@@ -77,6 +78,7 @@ function App() {
                         <Route path="/dotnet" element={<DotNet />} />
                         <Route path="/ai" element={<AIProgramming />} />
                         <Route path="/react" element={<ReactTech />} />
+                        <Route path="/microservices" element={<Microservices />} />
                     </Routes>
 
                 </AnimatePresence>

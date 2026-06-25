@@ -8,7 +8,8 @@ export default function Navbar() {
         { path: "/", label: "Home" },
         { path: "/dotnet", label: ".NET" },
         { path: "/ai", label: "AI" },
-        { path: "/react", label: "React" }
+        { path: "/react", label: "React" },
+        { path: "/microservices", label: "Microservices" }
     ];
 
     return (
