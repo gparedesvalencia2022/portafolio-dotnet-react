@@ -1,4 +1,4 @@
-export function startGPVMouseEffect(duration = 30000) {
+export function startGPVMouse(duration = 30000) {
     function createGPV(x, y) {
         const el = document.createElement("div");
 

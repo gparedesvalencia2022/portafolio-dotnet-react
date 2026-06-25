@@ -8,36 +8,25 @@ import AIProgramming from "./AIProgramming";
 import Navbar from "../components/Navbar";
 import PageLoader from "../components/PageLoader";
 
-import { startSnow } from "@/effects/snowEffect";
-import { startFootball } from "@/effects/footballEffect";
-import { startGPVEffect } from "@/effects/gpvEffect";
-import { startMatrixRain } from "@/effects/matrixEffect";
-import { startGPVMouseEffect } from "@/effects/gpvMouseEffect";
+import { useSnowEffect } from "@/hooks/useSnowEffect";
+import { useFootballEffect } from "@/hooks/useFootballEffect";
+import { useMatrixRainEffect } from "@/hooks/useMatrixRainEffect";
+import { useGPVMouseEffect } from "@/hooks/useGPVMouseEffect";
+
+
 import { useRef } from "react";
 
 function App() {
     const started = useRef(false);
 
-    useEffect(() => {
-        const now = new Date();
-        const month = now.getMonth() + 1;
-        if (!started.current) {
-            started.current = true;
 
-            const now = new Date();
-            const month = now.getMonth() + 1;
+    const month = new Date().getMonth() + 1;
 
+    useSnowEffect(month === 12 ? 30000 : null);
+   // useFootballEffect(month === 6 || month === 7 ? 30000 : null);
 
-           // startMatrixRain(20000);
-            startGPVMouseEffect(10000);
-
-            //startGPVEffect(30000);
-
-            if (month === 12) startSnow(30000);
-           // if (month === 6 || month === 7) startFootball(30000);
-        }
-
-    }, []);
+    //useMatrixRainEffect(30000);
+    useGPVMouseEffect(3000);
 
 
     const location = useLocation();

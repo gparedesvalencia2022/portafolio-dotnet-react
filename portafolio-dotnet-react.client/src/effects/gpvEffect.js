@@ -1,4 +1,4 @@
-export function startGPVEffect(duration = 30000) {
+export function startGPV(duration = 30000) {
     const container = document.createElement("div");
     container.style.position = "fixed";
     container.style.top = "0";

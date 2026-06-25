@@ -1,7 +1,7 @@
-import { useTyping } from "../hooks/useTyping";
+import {useTypingEffect } from "@/hooks/useTypingEffect";
 
 export default function TerminalLine({ text }) {
-    const typed = useTyping(text || "");
+    const typed = useTypingEffect(text || "");
 
     const isLink = text?.includes("http");
 
