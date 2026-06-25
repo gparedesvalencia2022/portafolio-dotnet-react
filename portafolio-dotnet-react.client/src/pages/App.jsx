@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Home from "./Home";
 import DotNet from "./DotNet";
 import AIProgramming from "./AIProgramming";
+import ReactTech from "./ReactTech";
 import Navbar from "../components/Navbar";
 import PageLoader from "../components/PageLoader";
 
@@ -23,7 +24,7 @@ function App() {
     const month = new Date().getMonth() + 1;
 
     useSnowEffect(month === 12 ? 30000 : null);
-   // useFootballEffect(month === 6 || month === 7 ? 30000 : null);
+    // useFootballEffect(month === 6 || month === 7 ? 30000 : null);
 
     //useMatrixRainEffect(30000);
     useGPVMouseEffect(3000);
@@ -58,12 +59,26 @@ function App() {
             {/* CONTENIDO */}
             <div className="flex-grow-1">
 
+                {/*
+                AnimatePresence enables page transition animations when components enter or exit the DOM.
+                mode="wait" ensures that the current page fully exits before the next one enters.
+                */}
+
                 <AnimatePresence mode="wait">
+
+                    {/* 
+                Routes defines the mapping between URL paths and React components.
+                The location and key props ensure that page transitions are properly animated
+                whenever the route changes.
+                */}
                     <Routes location={location} key={location.pathname}>
+                        {/* Each Route maps a URL path to a specific component */}
                         <Route path="/" element={<Home />} />
                         <Route path="/dotnet" element={<DotNet />} />
                         <Route path="/ai" element={<AIProgramming />} />
+                        <Route path="/react" element={<ReactTech />} />
                     </Routes>
+
                 </AnimatePresence>
 
             </div>
