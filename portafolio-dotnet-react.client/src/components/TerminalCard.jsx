@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import TerminalLine from "./TerminalLine";
 
 const commands = [
-    "gpv@fullstack:~$ npm install nodejs",
+    "gpv@fullstack:~$ mkdir gpv-project",
+    "gpv@fullstack:~$ cd gpv-project",
     "gpv@fullstack:~$ dotnet new webapi",
-    "gpv@fullstack:~$ dotnet run",
-    "gpv@fullstack:~$ code .",    
-    "gpv@fullstack:~$ echo 'to contact me, visit my GitHub repository:'",
+    "gpv@fullstack:~$ npm create vite@latest client --template react",
+    "gpv@fullstack:~$ cd client",
+    "gpv@fullstack:~$ npm install",
+    "gpv@fullstack:~$ npm run dev",
+    "gpv@fullstack:~$ code .",
+    "gpv@fullstack:~$ echo 'To contact me, visit my GitHub repository:'",
     "gpv@fullstack:~$ https://github.com/gparedesvalencia2022"
 
 ];
