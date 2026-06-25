@@ -1,4 +1,4 @@
-import {useTypingEffect } from "@/hooks/useTypingEffect";
+import { useTypingEffect } from "@/hooks/useTypingEffect";
 
 export default function TerminalLine({ text }) {
     const typed = useTypingEffect(text || "");
