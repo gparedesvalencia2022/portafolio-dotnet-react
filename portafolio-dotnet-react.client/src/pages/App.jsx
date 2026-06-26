@@ -6,6 +6,8 @@ import Home from "./Home";
 import DotNet from "./DotNet";
 import AIProgramming from "./AIProgramming";
 import ReactTech from "./ReactTech";
+import AngularTech from "./AngularTech";
+import DevOpsTech from "./DevOpsTech";
 import Microservices from "./Microservices";
 import Navbar from "../components/Navbar";
 import PageLoader from "../components/PageLoader"; 
@@ -79,6 +81,9 @@ function App() {
                         <Route path="/ai" element={<AIProgramming />} />
                         <Route path="/react" element={<ReactTech />} />
                         <Route path="/microservices" element={<Microservices />} />
+                        <Route path="/angular" element={<AngularTech />} />
+                        <Route path="/devops" element={<DevOpsTech />} />
+
                     </Routes>
 
                 </AnimatePresence>

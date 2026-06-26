@@ -9,7 +9,9 @@ export default function Navbar() {
         { path: "/dotnet", label: ".NET" },
         { path: "/ai", label: "AI" },
         { path: "/react", label: "React" },
-        { path: "/microservices", label: "Microservices" }
+        { path: "/microservices", label: "Microservices" },
+        { path: "/angular", label: "AngularTech" },
+        { path: "/devops", label: "DevOpsTech" }
     ];
 
     return (
