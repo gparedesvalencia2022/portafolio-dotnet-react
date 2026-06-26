@@ -1,6 +1,36 @@
+/* DESKTOP */
+@media (min-width: 992px) {
+    .navbar-menu {
+        display: flex !important;
+        opacity: 1 !important;
+    }
+}
+
 /* =========================
    MOBILE OPTIMIZATION ✅
 ========================= */
+@media (max-width: 991px) {
+    .nav-link-custom {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .navbar-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: #111;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 0 0 15px rgba(46, 160, 67, 0.3);
+    }
+
+        .navbar-menu.show {
+            display: block; 
+        }
+}
+
 @media (max-width: 768px) {
 
     .card {
@@ -32,7 +62,7 @@
         background: #222;
         border-radius: 10px;
     }
-    /* ✅ SOLO ajustes responsive */
+    
     .terminal-container {
         max-width: 100%;
         margin: 1rem;

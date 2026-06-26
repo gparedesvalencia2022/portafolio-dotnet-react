@@ -8,6 +8,8 @@ import AIProgramming from "./AIProgramming";
 import ReactTech from "./ReactTech";
 import AngularTech from "./AngularTech";
 import DevOpsTech from "./DevOpsTech";
+import BootstrapTech from "./BootstrapTech";
+import HtmlCssTech from "./HtmlCssTech";
 import Microservices from "./Microservices";
 import Navbar from "../components/Navbar";
 import PageLoader from "../components/PageLoader"; 
@@ -83,6 +85,8 @@ function App() {
                         <Route path="/microservices" element={<Microservices />} />
                         <Route path="/angular" element={<AngularTech />} />
                         <Route path="/devops" element={<DevOpsTech />} />
+                        <Route path="/bootstrap" element={<BootstrapTech />} />
+                        <Route path="/html-css" element={<HtmlCssTech />} />                        
 
                     </Routes>
 
