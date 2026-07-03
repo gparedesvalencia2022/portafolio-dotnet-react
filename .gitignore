@@ -40,4 +40,14 @@ Thumbs.db
 # Visual Studio Code
 # ======================
 .vscode/
-portafolio-dotnet-react.client/obj/
+
+# Archivos de compilación de .NET
+**/obj/
+**/bin/
+**/Debug/
+**/Release/
+
+# Archivos específicos de Visual Studio
+*.user
+*.suo
+*.cache
