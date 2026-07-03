@@ -1,0 +1,45 @@
+{
+    "folders": [
+        {
+            "path": "portafolio-dotnet-react.Server"
+        },
+        {
+            "path": "portafolio-dotnet-react.client"
+        }
+    ],
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Backend API",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "build",
+                "program": "${workspaceFolder:portafolio-dotnet-react.Server}/bin/Debug/net10.0/portafolio-dotnet-react.Server.dll",
+                "args": [],
+                "cwd": "${workspaceFolder:portafolio-dotnet-react.Server}",
+                "stopAtEntry": false,
+                "console": "integratedTerminal",
+                "env": {
+                    "ASPNETCORE_ENVIRONMENT": "Development"
+                }
+            },
+            {
+                "name": "Frontend React",
+                "type": "node-terminal",
+                "request": "launch",
+                "command": "npm run dev",
+                "cwd": "${workspaceFolder:portafolio-dotnet-react.client}",
+                "env": {
+                    "BROWSER": "none"
+                }
+            }
+        ],
+        "compounds": [
+            {
+                "name": "Frontend & Backend",
+                "configurations": ["Backend API", "Frontend React"]
+            }
+        ]
+    }
+}

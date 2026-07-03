@@ -20,9 +20,14 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowVite",
         policy =>
         {
-            policy.WithOrigins("https://localhost:63293")
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
+            policy.WithOrigins(
+                "https://localhost:5173",    // Vite en HTTPS
+                "http://localhost:5173",      // Vite en HTTP
+                "https://localhost:63293"     // Visual Studio (opcional)
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();  // Si usas cookies o autenticación
         });
 });
 
