@@ -18,6 +18,7 @@ import { useSnowEffect } from "@/hooks/useSnowEffect";
 import { useFootballEffect } from "@/hooks/useFootballEffect";
 import { useMatrixRainEffect } from "@/hooks/useMatrixRainEffect";
 import { useGPVMouseEffect } from "@/hooks/useGPVMouseEffect";
+import ChatBot from '../components/ChatBot/ChatBot'; // ← Importa el ChatBot
 
 
 import { useRef } from "react";
@@ -88,8 +89,7 @@ function App() {
                         <Route path="/bootstrap" element={<BootstrapTech />} />
                         <Route path="/html-css" element={<HtmlCssTech />} />                        
 
-                    </Routes>
-
+                    </Routes>                  
                 </AnimatePresence>
 
             </div>
@@ -98,6 +98,8 @@ function App() {
             <footer className="bg-dark text-white text-center p-3">
                 © 2026 - Portfolio .NET Developer gparedesvalencia
             </footer>
+            {/*el ChatBot aquí - estará en todas las páginas */}
+            <ChatBot />
 
         </div>
     );
