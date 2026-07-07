@@ -1,5 +1,8 @@
 // Chatbot knowledge base
 const knowledgeBase = {
+    // Each category has:
+    // - keywords: array of trigger words (case-insensitive)
+    // - responses: array of possible replies (randomly selected)
     // Greetings
     greetings: {
         keywords: ['hello', 'hi', 'hey', 'hola', 'bonjour', 'salut', 'good morning', 'good afternoon'],

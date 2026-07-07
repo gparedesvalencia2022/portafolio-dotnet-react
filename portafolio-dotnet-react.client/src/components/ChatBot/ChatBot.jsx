@@ -13,16 +13,16 @@ const ChatBot = () => {
     const messagesEndRef = useRef(null);
 
     // Auto-open chat on page load
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            if (!hasAutoOpened) {
-                setIsOpen(true);
-                setHasAutoOpened(true);
-            }
-        }, 1500);
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         if (!hasAutoOpened) {
+    //             setIsOpen(true);
+    //             setHasAutoOpened(true);
+    //         }
+    //     }, 1500);
 
-        return () => clearTimeout(timer);
-    }, [hasAutoOpened]);
+    //     return () => clearTimeout(timer);
+    // }, [hasAutoOpened]);
 
     // Initialize with welcome message
     useEffect(() => {
@@ -46,6 +46,7 @@ const ChatBot = () => {
         setIsOpen(!isOpen);
     };
 
+    // Handles user message submission
     const handleSendMessage = async (e) => {
         e.preventDefault();
         if (!inputMessage.trim()) return;
@@ -54,12 +55,18 @@ const ChatBot = () => {
         setInputMessage('');
     };
 
+    // Handles suggestion button clicks
     const handleSuggestionClick = async (suggestion) => {
         await sendUserMessage(suggestion);
     };
 
+    // Core message processing
     const sendUserMessage = async (messageText) => {
-        // Add user message
+        // 1. Add user message to state
+        // 2. Set isTyping = true
+        // 3. Get bot response from service
+        // 4. Add bot message to state
+        // 5. Set isTyping = false
         const userMessage = {
             id: Date.now(),
             text: messageText,
