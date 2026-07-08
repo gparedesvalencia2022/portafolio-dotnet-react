@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<IPortfolioService, PortfolioService>();
+builder.Services.AddHttpClient<ICurrencyService, CurrencyService>();
 builder.Services.AddMemoryCache();
 
 builder.Services.AddEndpointsApiExplorer();

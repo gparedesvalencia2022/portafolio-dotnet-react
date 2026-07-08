@@ -1,0 +1,31 @@
+.currency-widget {
+    max-width: 300px;
+    margin: 10px auto;
+}
+
+    .currency-widget.loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80px;
+    }
+
+    .currency-widget.error {
+        color: #dc3545;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .currency-widget .card {
+        border-radius: 12px;
+        border: 1px solid #2a2a2a;
+    }
+
+    .currency-widget .card-header {
+        background-color: #1e3a2f;
+        border-bottom: 1px solid #333;
+    }
+
+    .currency-widget .card-body {
+        padding: 12px 16px;
+    }

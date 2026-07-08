@@ -7,6 +7,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { BrowserRouter } from "react-router-dom";
 import './stylesheet/App.css'
 import './stylesheet/App.mobile.css'
+import './stylesheet/CurrencyWidget.css'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>

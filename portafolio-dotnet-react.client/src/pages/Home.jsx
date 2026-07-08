@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Skeleton from "../components/Skeleton";
 import { getPortfolio } from "../services/portfolioService";
 import TerminalCard from "../components/TerminalCard";
+import CurrencyWidget from '../components/CurrencyWidget'; // ← Importa el widget
 
 export default function Home() {
     // ================================================================
@@ -114,10 +115,18 @@ export default function Home() {
                 <div className="container py-5">
 
                     {/* ============================================ */}
-                    {/* TERMINAL COMPONENT - Top of page */}
+                    {/* HEADER - Terminal + Widget en una sola fila */}
                     {/* ============================================ */}
-                    <div className="d-flex justify-content-center mb-5">
-                        <TerminalCard /> {/* Simulates a terminal window */}
+                    <div className="row align-items-center mb-5">
+                        {/* Terminal a la IZQUIERDA */}
+                        <div className="col-md-8">
+                            <TerminalCard />
+                        </div>
+
+                        {/* Currency Widget a la DERECHA */}
+                        <div className="col-md-4">
+                            <CurrencyWidget />
+                        </div>
                     </div>
 
                     {/* ============================================ */}
