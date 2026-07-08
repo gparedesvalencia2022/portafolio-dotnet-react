@@ -50,7 +50,15 @@ const CurrencyWidget = () => {
         <div className="currency-widget">
             <div className="card bg-dark text-white border-success">
                 <div className="card-header">
-                    <h6 className="mb-0">💱 Exchange Rates</h6>
+                    <h6 className="mb-0 text-center">
+                        💰 My full-stack hourly rate: <strong>90 USD</strong>
+                        <span className="text-white ms-2 text-center">
+                            ≈ ${rates?.cad ? (90 * rates.cad).toFixed(2) : '...'} CAD
+                        </span>
+                    </h6>
+                    <small className="text-white text-center" style={{ fontSize: '0.65rem' }}>
+                        💱 Based on current USD/CAD exchange rate
+                    </small>
                 </div>
                 <div className="card-body">
                     <div className="row">
@@ -69,7 +77,7 @@ const CurrencyWidget = () => {
                     </div>
                     <div className="mt-2">
                         <small className="text-white">
-                            Base: {rates?.base} • Updated: {rates?.timestamp}
+                            Updated: {rates?.timestamp}
                         </small>
                     </div>
                 </div>

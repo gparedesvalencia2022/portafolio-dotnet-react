@@ -124,8 +124,8 @@ export default function Home() {
                         </div>
 
                         {/* Currency Widget a la DERECHA */}
-                        <div className="col-md-4">
-                            <CurrencyWidget />
+                        <div className="col-md-4">  
+                                <CurrencyWidget />                            
                         </div>
                     </div>
 
