@@ -9,6 +9,13 @@
     --code-bg: #f4f3ec;
     --accent: #2ea043;
     --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    
+        --accent: #00ff00; /* O el tono de verde que uses */
+        --bg-card: #1a1a1a; /* Fondo de las tarjetas */
+        --bg-dark: #0d0d0d; /* Fondo principal */
+        --text-light: #ffffff; /* Texto claro */
+        --text-muted: #aaaaaa; /* Texto secundario */
+    
 }
 
 /* =========================

@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import Skeleton from "../components/Skeleton";
 import { getPortfolio } from "../services/portfolioService";
 import TerminalCard from "../components/TerminalCard";
-import CurrencyWidget from '../components/CurrencyWidget'; // ← Importa el widget
+import CurrencyWidget from '../components/CurrencyWidget'; 
+import PluralsightCarousel from '../components/PluralsightCarousel';
 
 export default function Home() {
     // ================================================================
@@ -229,7 +230,12 @@ export default function Home() {
                             </div>
                         </div>
                     </Section>
-
+                    {/* ============================================ */}
+                    {/* PLURALSIGHT CAROUSEL - Cursos Completados */}
+                    {/* ============================================ */}
+                    {/*   <Section title="Pluralsight Courses">
+                        <PluralsightCarousel />
+                    </Section>*/}
                 </div>
             </div>
         </motion.div>
